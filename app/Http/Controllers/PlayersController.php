@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Player;
 
 class PlayersController extends Controller
 {
-    public function index(){
-
-        $player = Player::all();
-        return view('players', compact(['player']));
-    }
+  
 
     public function show($id) {
         $player = Player::find($id);
-        return view('players', compact('player'));
+        return view('players.show', compact('player'));
     }
 }
